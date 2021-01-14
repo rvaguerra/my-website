@@ -1,8 +1,9 @@
 <template>
-  <article class="container mx-auto py-16">
-    <SectionTitle class="pb-8" :title="title"></SectionTitle>
+  <article class="container mx-auto py-32">
+    <SectionTitle :title="title"></SectionTitle>
+    <SectionSubTitle :subTitle="subTitle"></SectionSubTitle>
 
-    <div class="tracking-wider leading-loose">
+    <div class="mt-8 tracking-wider leading-loose">
       <slot></slot>
     </div>
   </article>
@@ -10,15 +11,20 @@
 
 <script>
 import SectionTitle from "./Title";
+import SectionSubTitle from "./SubTitle";
 
 export default {
   components: {
     SectionTitle,
+    SectionSubTitle,
   },
   props: {
     title: {
       type: String,
-      default: "Section Title",
+    },
+
+    subTitle: {
+      type: String,
     },
   },
 };
