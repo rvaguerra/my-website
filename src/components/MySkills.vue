@@ -1,10 +1,14 @@
 <template>
   <section>
     <SectionContainer title="My Skills">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, dolorum
-      sunt sint quibusdam maiores non pariatur assumenda quo molestiae velit
-      minima eveniet praesentium et reiciendis suscipit. Ut omnis commodi
-      laborum.
+      <SectionParagraph>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, dolorum
+        sunt sint quibusdam maiores non pariatur assumenda quo molestiae velit
+        minima eveniet praesentium et reiciendis suscipit. Ut omnis commodi
+        laborum.
+      </SectionParagraph>
+
+      <SkillList :skills="skills"></SkillList>
     </SectionContainer>
   </section>
 </template>
