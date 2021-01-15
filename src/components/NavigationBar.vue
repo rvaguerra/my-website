@@ -1,5 +1,5 @@
 <template>
-  <nav class="my-8">
+  <nav class="py-8">
     <ul class="flex justify-center space-x-16">
       <li class="navbar-item"><a href="#hello">Hello</a></li>
       <li class="navbar-item"><a href="#skills">Skills</a></li>
