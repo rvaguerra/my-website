@@ -1,27 +1,22 @@
 <template>
-  <section>
-    <SectionContainer title="My Skills">
-      <SectionParagraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, dolorum
-        sunt sint quibusdam maiores non pariatur assumenda quo molestiae velit
-        minima eveniet praesentium et reiciendis suscipit. Ut omnis commodi
-        laborum.
-      </SectionParagraph>
+  <SectionContainer class="bg-gray-100">
+    <template v-slot:title>My Skills</template>
 
-      <SkillList :skills="skills"></SkillList>
-    </SectionContainer>
-  </section>
+    <template v-slot:sub-title
+      >Lorem ipsum dolor sit amet consectetur.</template
+    >
+
+    <SkillList :skills="skills"></SkillList>
+  </SectionContainer>
 </template>
 
 <script>
 import SectionContainer from "./ui/Section/Container";
-import SectionParagraph from "./ui/Section/Paragraph";
 import SkillList from "./ui/Skills/List";
 
 export default {
   components: {
     SectionContainer,
-    SectionParagraph,
     SkillList,
   },
 
