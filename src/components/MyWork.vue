@@ -1,56 +1,38 @@
 <template>
-  <section>
-    <SectionContainer title="My Work">
-      <SectionParagraph
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-        dolorum sunt sint quibusdam maiores non pariatur assumenda quo molestiae
-        velit minima eveniet praesentium et reiciendis suscipit. Ut omnis
-        commodi laborum.
-      </SectionParagraph>
+  <SectionContainer>
+    <template v-slot:title>My Work</template>
 
-      <SectionParagraph class="space-y-12">
-        <article
-          v-for="project in projects"
-          :key="project.title"
-          class="flex projects-wrapper"
-        >
-          <div
-            class="flex-1 bg-cover bg-center"
-            :style="`background-image: url(${project.cover})`"
-          ></div>
+    <template v-slot:sub-title
+      >Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+    </template>
 
-          <div class="flex-1">
-            <div class="p-12 space-y-6">
-              <h2 class="text-xl uppercase text-gray-600">
-                {{ project.title }}
-              </h2>
+    <div class="space-y-12">
+      <Project
+        v-for="project in projects"
+        :key="project.title"
+        :cover="project.cover"
+        :skills="project.skills"
+      >
+        <template v-slot:title>
+          {{ project.title }}
+        </template>
 
-              <p class="text-gray-500">{{ project.content }}</p>
-
-              <div class="flex flex-wrap">
-                <span
-                  v-for="skill in project.skills"
-                  :key="skill"
-                  class="my-1 mr-2 px-4 py-1 border text-xs"
-                  >{{ skill }}</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-      </SectionParagraph>
-    </SectionContainer>
-  </section>
+        <template v-slot:content>
+          {{ project.content }}
+        </template>
+      </Project>
+    </div>
+  </SectionContainer>
 </template>
 
 <script>
 import SectionContainer from "./ui/Section/Container";
-import SectionParagraph from "./ui/Section/Paragraph";
+import Project from "./ui/Work/Project";
 
 export default {
   components: {
     SectionContainer,
-    SectionParagraph,
+    Project,
   },
 
   data() {
