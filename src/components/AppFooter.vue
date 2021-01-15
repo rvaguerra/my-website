@@ -48,6 +48,11 @@ export default {
           icon: "fab fa-linkedin",
         },
         {
+          text: "GitHub",
+          url: "#",
+          icon: "fab fa-github",
+        },
+        {
           text: "My Email",
           url: "#",
           icon: "far fa-envelope",
